@@ -155,7 +155,9 @@ No known bugs at this time.
 
 ## Authors
 Oussama Bouaoued - [Github](https://github.com/BlackjackXXI) / [Twitter](https://twitter.com/Blvckjvck_XXi)
+
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
+
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
 Second part of Airbnb: Joann Vuong

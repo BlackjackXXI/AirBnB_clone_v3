@@ -58,7 +58,8 @@ class TestBaseModelDocs(unittest.TestCase):
 
 class TestBaseModel(unittest.TestCase):
     """Test the BaseModel class"""
-    def test_instantiation(self):
+    @mock.patch('models.storage')
+    def test_instantiation(self, mock_storage):
         """Test that object is correctly created"""
         inst = BaseModel()
         self.assertIs(type(inst), BaseModel)
@@ -75,6 +76,7 @@ class TestBaseModel(unittest.TestCase):
             with self.subTest(attr=attr, typ=typ):
                 self.assertIn(attr, inst.__dict__)
                 self.assertIs(type(inst.__dict__[attr]), typ)
+        self.assertTrue(mock_storage.new.called)
         self.assertEqual(inst.name, "Holberton")
         self.assertEqual(inst.number, 89)
 
@@ -156,5 +158,4 @@ class TestBaseModel(unittest.TestCase):
         new_updated_at = inst.updated_at
         self.assertNotEqual(old_updated_at, new_updated_at)
         self.assertEqual(old_created_at, new_created_at)
-        self.assertTrue(mock_storage.new.called)
         self.assertTrue(mock_storage.save.called)
